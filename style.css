@@ -25,6 +25,7 @@ body {
 
 .header__title {
 	text-align: center;
+	margin-top: -15px;
 	background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
 	background-size: 400% 400%;
 	background-clip: text;
