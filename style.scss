@@ -96,15 +96,15 @@ body {
 	vertical-align: top;
 	padding: 0 30px;
 	position: relative;
+
+	@include for-tablet-portrait-up {
+		display: none;
+	}
 }
 
 .elevate {
 	padding: 90px 0;
 	font-size: 0;
-
-	@include for-tablet-landscape-up {
-		padding: 40px 0;
-	}
 }
 
 .elevate__item:first-child {
@@ -112,6 +112,11 @@ body {
 
 	@include for-tablet-landscape-up {
 		padding-top: 20px;
+	}
+
+	@include for-tablet-portrait-up {
+		display: block;
+		width: 100%;
 	}
 }
 
@@ -263,6 +268,10 @@ body {
 	@include for-tablet-landscape-up {
 		width: auto;
 	}
+
+	@include for-tablet-portrait-up {
+		text-align: center;
+	}
 }
 
 .experts-item__heading {
@@ -294,12 +303,19 @@ body {
 		float: left;
 		margin-right: 40px;
 	}
+
+	@include for-phone-only {
+		float: none;
+		margin-right: 0;
+		width: 100%;
+	}
 }
 
 .experts-small-item__text {
 	font-size: 16px;
 	color: #111111;
 	margin: 0 0 20px;
+	text-align: left;
 }
 
 .experts-small-item__button {
@@ -324,12 +340,22 @@ body {
 .statistic {
 	padding-bottom: 60px;
 	font-size: 0;
+
+	@include for-tablet-portrait-up {
+		padding-bottom: 20px;
+	}
 }
 
 .statistic__item {
 	width: 50%;
 	display: inline-block;
 	vertical-align: top;
+
+	@include for-tablet-portrait-up {
+		display: block;
+		width: auto;
+		margin-bottom: 40px;
+	}
 }
 
 .statistic__item:first-child {
@@ -364,6 +390,12 @@ body {
 	width: 49%;
 	text-align: center;
 	padding: 10px;
+
+	@include for-phone-only {
+		width: 100%;
+		margin-right: 0 !important;
+		margin-bottom: 20px !important;
+	}
 }
 
 .stat__box h3 {
@@ -422,11 +454,19 @@ body {
 		width: auto;
 		padding: 0;
 	}
+
+	@include for-phone-only {
+		display: block;
+	}
 }
 
 .scroll__item {
 	width: 405px;
 	flex-shrink: 0;
+
+	@include for-phone-only {
+		width: 100%;
+	}
 }
 
 .scr-item__img {
@@ -454,6 +494,10 @@ body {
 .scr-item__arrow {
 	height: 48px;
 	width: 48px;
+
+	@include for-phone-only {
+		display: none;
+	}
 }
 
 
@@ -481,6 +525,11 @@ body {
 	text-align: center;
 	background-color: #e0e5eb;
 	cursor: pointer;
+
+	@include for-tablet-portrait-up {
+		display: block;
+		width: 100%;
+	}
 }
 
 .switch__item-lab:hover {
@@ -522,6 +571,15 @@ body {
 	@include for-tablet-landscape-up {
 		width: 340px;
 		margin-right: 40px;
+	}
+
+	@include for-tablet-portrait-up {
+		width: 200px;
+		height: auto;
+	}
+
+	@include for-phone-only {
+		display: none;
 	}
 }
 
@@ -592,7 +650,12 @@ body {
 .gallery__row {
 	display: flex;
 	gap: 12px;
+	justify-content: center;
 	margin-bottom: 12px;
+
+	@include for-phone-only {
+		flex-wrap: wrap;
+	}
 }
 
 .gallery__item {
@@ -608,8 +671,14 @@ body {
 		transform: scale(1.02);
 	}
 
-	@include for-tablet-landscape-up {
+	@include for-tablet-portrait-up {
+		&:nth-child(n + 3) {
+			display: none;
+		}
+	}
 
+	@include for-phone-only {
+		flex-shrink: 0;
 	}
 }
 
@@ -634,6 +703,10 @@ body {
 
 	&:target {
 		display: block;
+	}
+
+	@include for-phone-only {
+		padding: 1rem;
 	}
 }
 
